@@ -63,17 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for On Top band based on new palette
+				// Custom colors for On Top band
 				brand: {
-					primary: '#3A506B',
-					'primary-dark': '#2A3E58',
-					'primary-darker': '#1A2C3E',
-					secondary: '#D1D1D1',
-					accent: '#C8102E',
-					'accent-dark': '#A00E25',
-					neutral: '#E0D6C4',
-					'neutral-dark': '#D0C6B4',
-					white: '#FFFFFF',
+					purple: '#9b87f5',
+					'purple-dark': '#7E69AB',
+					'purple-darker': '#1A1F2C',
+					pink: '#FFDEE2',
+					peach: '#FDE1D3',
+					orange: '#F97316',
 				}
 			},
 			borderRadius: {
