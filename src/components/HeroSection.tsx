@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 const HeroSection = () => {
   return (
     <section id="home" className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Video or Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070')" }}>
+      {/* Background Image */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('https://ontop-band.de/images/header1.jpg')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
 
