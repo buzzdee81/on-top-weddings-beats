@@ -46,12 +46,11 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <a href="#home" className="flex items-center">
-          <span className="text-2xl font-bold font-serif text-brand-purple-dark">
-            On Top
-          </span>
-          <span className="ml-2 text-sm text-gray-600 hidden sm:block">
-            Hochzeits- & Eventband
-          </span>
+          <img 
+            src="/logos/ontop-logo.png" 
+            alt="On Top Band Logo" 
+            className="h-12 md:h-16 mr-3"
+          />
         </a>
 
         {/* Desktop Navigation */}

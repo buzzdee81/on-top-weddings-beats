@@ -13,6 +13,14 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container relative z-10 text-center">
         <div className="max-w-3xl mx-auto">
+          <div className="flex justify-center mb-6">
+            <img 
+              src="/logos/ontop-logo.png" 
+              alt="On Top Band Logo" 
+              className="h-32 sm:h-40 md:h-48 animate-fade-in" 
+            />
+          </div>
+
           <h1 className="text-white mb-6 animate-fade-in">
             Ihre perfekte{" "}
             <span className="text-brand-pink">Hochzeitsband</span> für
