@@ -1,0 +1,189 @@
+
+import React, { useState } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+
+const images = [
+  {
+    src: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070",
+    alt: "Band während eines Auftritts auf einer Hochzeit"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070",
+    alt: "Nahaufnahme der Band während eines Live-Auftritts"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070",
+    alt: "Stimmungsvolle Beleuchtung während eines Konzerts"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1574226516831-e1dff420e562?q=80&w=1937",
+    alt: "Publikum genießt die Musik bei einer Veranstaltung"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1528489290689-8402e4a4cc15?q=80&w=2070",
+    alt: "Nahaufnahme eines Gitarristen während eines Solos"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?q=80&w=2070",
+    alt: "Aufnahme eines romantischen Hochzeitstanzes"
+  }
+];
+
+const videos = [
+  {
+    id: "videoId1",
+    title: "On Top - Live auf einer Hochzeit 2023",
+    thumbnail: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070",
+  },
+  {
+    id: "videoId2",
+    title: "Best of On Top - Highlights 2022",
+    thumbnail: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070",
+  },
+  {
+    id: "videoId3",
+    title: "On Top - Partymedley",
+    thumbnail: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070",
+  }
+];
+
+const audio = [
+  {
+    title: "Perfect (Ed Sheeran Cover)",
+    duration: "4:23"
+  },
+  {
+    title: "Don't Stop Believin' (Journey Cover)",
+    duration: "3:50"
+  },
+  {
+    title: "Summer of '69 (Bryan Adams Cover)",
+    duration: "3:35"
+  },
+  {
+    title: "Sweet Caroline (Neil Diamond Cover)",
+    duration: "3:20"
+  }
+];
+
+const MediaSection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openLightbox = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+    setIsOpen(true);
+  };
+
+  return (
+    <section id="media" className="section-padding">
+      <div className="container">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="mb-4 text-gradient">Impressionen</h2>
+          <p className="text-lg">
+            Erleben Sie die Energie und Stimmung unserer Live-Auftritte durch Fotos, Videos und Hörbeispiele.
+            Überzeugen Sie sich selbst von unserer Erfahrung und unserem professionellen Auftreten.
+          </p>
+        </div>
+
+        <Tabs defaultValue="fotos">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
+            <TabsTrigger value="fotos">Fotos</TabsTrigger>
+            <TabsTrigger value="videos">Videos</TabsTrigger>
+            <TabsTrigger value="audio">Hörbeispiele</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="fotos" className="mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {images.map((image, index) => (
+                <div 
+                  key={index}
+                  className="overflow-hidden rounded-lg shadow-md cursor-pointer animate-hover"
+                  onClick={() => openLightbox(image.src)}
+                >
+                  <AspectRatio ratio={4 / 3} className="bg-muted">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="object-cover w-full h-full"
+                    />
+                  </AspectRatio>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="videos" className="mt-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videos.map((video, index) => (
+                <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover">
+                  <div className="relative">
+                    <AspectRatio ratio={16 / 9} className="bg-muted">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                        <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-medium">{video.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="audio" className="mt-6">
+            <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+              <div className="p-6">
+                <h3 className="text-lg font-semibold mb-4 text-center">Hörproben</h3>
+                <div className="space-y-4">
+                  {audio.map((track, index) => (
+                    <div 
+                      key={index}
+                      className="flex items-center justify-between p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
+                    >
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center mr-3">
+                          <div className="w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-white border-b-4 border-b-transparent ml-0.5"></div>
+                        </div>
+                        <span className="font-medium">{track.title}</span>
+                      </div>
+                      <span className="text-gray-500 text-sm">{track.duration}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-center mt-6 text-gray-600 text-sm">
+                  Dies sind nur einige Ausschnitte unserer Live-Auftritte. Kontaktieren Sie uns für mehr Hörbeispiele!
+                </p>
+              </div>
+            </div>
+          </TabsContent>
+        </Tabs>
+
+        {/* Image Lightbox */}
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+          <DialogContent className="max-w-5xl p-0 bg-transparent border-0" onClick={() => setIsOpen(false)}>
+            <div className="w-full relative">
+              <img
+                src={selectedImage || ''}
+                alt="Vergrößerte Ansicht"
+                className="w-full h-auto"
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      </div>
+    </section>
+  );
+};
+
+export default MediaSection;
