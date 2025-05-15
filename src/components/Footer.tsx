@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4 flex flex-col items-start">
               <img 
-                src="/logos/ontop-logo.png" 
+                src="https://ontop-band.de/images/logo.png" 
                 alt="On Top Band Logo" 
                 className="h-16 mb-2" 
               />
@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-white border-opacity-10 pt-8 text-center text-sm text-gray-400">
           <div className="flex justify-center mb-4">
             <img 
-              src="/logos/ontop-thumbs.png" 
+              src="https://ontop-band.de/images/logo_ontop_neu_2017-01.png" 
               alt="On Top Ambience Logo" 
               className="h-16" 
             />
