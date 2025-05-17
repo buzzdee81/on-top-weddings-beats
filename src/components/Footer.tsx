@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <div className="mb-4 flex flex-col items-start">
               <img 
-                src="https://ontop-band.de/images/logo.png" 
+                src="/logo/logo.png" 
                 alt="On Top Band Logo" 
                 className="h-16 mb-2" 
               />
@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3 mt-6">
               <a
-                href="https://instagram.com/ontopband"
+                href="https://www.instagram.com/ontop_hochzeitsband"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white bg-opacity-10 hover:bg-opacity-20 p-3 rounded-full transition-all"
@@ -37,9 +37,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Kontakt</h4>
             <div className="flex flex-col space-y-4">
-              <a href="tel:+491234567890" className="flex items-center hover:text-brand-pink transition-colors">
+              <a href="tel:+49 175 52 63 003" className="flex items-center hover:text-brand-pink transition-colors">
                 <Phone size={18} className="mr-2" />
-                <span>+49 123 4567890</span>
+                <span>+49 175 52 63 003</span>
               </a>
               <a href="mailto:info@ontop-band.de" className="flex items-center hover:text-brand-pink transition-colors">
                 <Mail size={18} className="mr-2" />
@@ -80,7 +80,7 @@ const Footer = () => {
         <div className="border-t border-white border-opacity-10 pt-8 text-center text-sm text-gray-400">
           <div className="flex justify-center mb-4">
             <img 
-              src="https://ontop-band.de/images/logo_ontop_neu_2017-01.png" 
+              src="/logo/logo_ontop_neu.png" 
               alt="On Top Ambience Logo" 
               className="h-16" 
             />
