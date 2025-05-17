@@ -47,7 +47,7 @@ const Header = () => {
       <div className="container flex items-center justify-between">
         <a href="#home" className="flex items-center">
           <img 
-            src="/images/logo.png" 
+            src="/logo/logo.png" 
             alt="On Top Band Logo" 
             className="h-12 md:h-16 mr-3"
           />
