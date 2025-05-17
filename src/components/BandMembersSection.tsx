@@ -41,7 +41,7 @@ const bandMembers: BandMember[] = [
   },
   {
     name: "Leny",
-    instrument: "Gitarre",
+    instrument: "Gesang & Gitarre",
     image: "images/members/leny1.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Singt unter der Dusche nur 80er Hits",
   },
