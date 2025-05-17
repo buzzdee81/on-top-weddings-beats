@@ -151,9 +151,12 @@ const ContactSection = () => {
                   <Phone className="w-5 h-5 mr-3 text-brand-purple mt-1" />
                   <div>
                     <h4 className="font-medium">Telefon</h4>
-                    <a href="tel:+491234567890" className="text-gray-600 hover:text-brand-purple">
-                      +49 123 4567890
-                    </a>
+                    <p></p><a href="tel:+49 (0) 175 52 63 003" className="text-gray-600 hover:text-brand-purple">
+                      +49 (0) 175 52 63 003
+                    </a></p>
+                    <p></p><a href="tel:+49 (0) 160 825 77 66" className="text-gray-600 hover:text-brand-purple">
+                      +49 (0) 160 825 77 66
+                    </a></p>
                   </div>
                 </div>
                 
