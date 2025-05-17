@@ -21,7 +21,7 @@ const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_USERNAME}/`;
 const instagramPosts = [
   {
     id: "post1",
-    imageUrl: "/posts/475156123_1978654539282685_2977966864755881624_n.jpg?q=80&w=2070",
+    imageUrl: "/posts/481414267_2664593927265043_4038362027393838112_n.jpg?q=80&w=2070",
     caption: "Großartiger Auftritt bei der Hochzeit! #livemusic #hochzeit",
     likes: 124,
     date: "2025-02-25",
