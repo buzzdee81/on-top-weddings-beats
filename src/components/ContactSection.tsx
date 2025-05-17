@@ -1,13 +1,14 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Calendar, Mail, Phone } from "lucide-react";
+import { Calendar, Mail, Phone, Loader2 } from "lucide-react";
+import { supabaseClient } from "@/integrations/supabase/client";
 
 interface ContactFormData {
   name: string;
@@ -21,21 +22,43 @@ interface ContactFormData {
 const ContactSection = () => {
   const { toast } = useToast();
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const onSubmit = (data: ContactFormData) => {
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
     console.log("Form data:", data);
     
-    // Here you would normally send the form data to a server
-    
-    // Show success message
-    toast({
-      title: "Anfrage erfolgreich gesendet!",
-      description: "Wir werden uns so schnell wie möglich bei Ihnen melden.",
-      duration: 5000,
-    });
-    
-    // Reset form
-    reset();
+    try {
+      // Rufe die Supabase Edge-Funktion auf
+      const { error } = await supabaseClient.functions.invoke('send-contact-email', {
+        body: data
+      });
+      
+      if (error) {
+        throw new Error(error.message || "Beim Senden der Anfrage ist ein Fehler aufgetreten");
+      }
+
+      // Erfolgsmeldung anzeigen
+      toast({
+        title: "Anfrage erfolgreich gesendet!",
+        description: "Wir werden uns so schnell wie möglich bei Ihnen melden.",
+        duration: 5000,
+      });
+      
+      // Formular zurücksetzen
+      reset();
+    } catch (error) {
+      console.error("Fehler beim Senden:", error);
+      
+      toast({
+        title: "Fehler beim Senden",
+        description: "Beim Senden Ihrer Anfrage ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -67,6 +90,7 @@ const ContactSection = () => {
                       placeholder="Ihr Name"
                       {...register("name", { required: "Name ist erforderlich" })}
                       className={errors.name ? "border-red-500" : ""}
+                      disabled={isSubmitting}
                     />
                     {errors.name && (
                       <p className="text-red-500 text-sm">{errors.name.message}</p>
@@ -81,6 +105,7 @@ const ContactSection = () => {
                       placeholder="Ihre E-Mail"
                       {...register("email", { required: "E-Mail ist erforderlich" })}
                       className={errors.email ? "border-red-500" : ""}
+                      disabled={isSubmitting}
                     />
                     {errors.email && (
                       <p className="text-red-500 text-sm">{errors.email.message}</p>
@@ -95,6 +120,7 @@ const ContactSection = () => {
                       id="phone"
                       placeholder="Ihre Telefonnummer"
                       {...register("phone")}
+                      disabled={isSubmitting}
                     />
                   </div>
                   
@@ -104,6 +130,7 @@ const ContactSection = () => {
                       id="date"
                       type="date"
                       {...register("date")}
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -114,6 +141,7 @@ const ContactSection = () => {
                     id="eventLocation"
                     placeholder="Wo findet Ihre Veranstaltung statt?"
                     {...register("eventLocation")}
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -125,14 +153,26 @@ const ContactSection = () => {
                     rows={4}
                     {...register("message", { required: "Nachricht ist erforderlich" })}
                     className={errors.message ? "border-red-500" : ""}
+                    disabled={isSubmitting}
                   />
                   {errors.message && (
                     <p className="text-red-500 text-sm">{errors.message.message}</p>
                   )}
                 </div>
 
-                <Button type="submit" className="w-full bg-brand-purple hover:bg-brand-purple-dark">
-                  Anfrage senden
+                <Button 
+                  type="submit" 
+                  className="w-full bg-brand-purple hover:bg-brand-purple-dark"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Wird gesendet...
+                    </>
+                  ) : (
+                    'Anfrage senden'
+                  )}
                 </Button>
                 
                 <p className="text-sm text-gray-500 text-center">
