@@ -10,40 +10,40 @@ interface BandMember {
 
 const bandMembers: BandMember[] = [
   {
-    name: "Thomas",
-    instrument: "Gesang & Gitarre",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop",
-    funFact: "Singt unter der Dusche nur 80er Hits",
-  },
-  {
-    name: "Julia",
+    name: "Nadine",
     instrument: "Gesang",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=988&auto=format&fit=crop",
-    funFact: "Kennt jeden Disney-Film auswendig",
+    image: "/images/members/nadine3.png?q=80&w=987&auto=format&fit=crop",
+    funFact: "Ob rockig oder emotional, sie erreicht mit Ihrer  Wahnsinns-Stimme jedes Ohr",
   },
   {
-    name: "Michael",
-    instrument: "Bass",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=987&auto=format&fit=crop",
-    funFact: "Sammelt seltene Vinylplatten",
-  },
-  {
-    name: "Andreas",
-    instrument: "Schlagzeug",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=987&auto=format&fit=crop",
-    funFact: "War früher Straßenmusiker in Berlin",
-  },
-  {
-    name: "Sarah",
+    name: "Bene",
     instrument: "Keyboard",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=987&auto=format&fit=crop",
-    funFact: "Spielt 5 Instrumente fließend",
+    image: "/images/members/bene3.png?q=80&w=988&auto=format&fit=crop",
+    funFact: "Der Mann für jeden Sound – und jeden Spaß",
   },
   {
-    name: "Markus",
+    name: "Chris",
+    instrument: "Bass",
+    image: "/images/members/chris4.png?q=80&w=987&auto=format&fit=crop",
+    funFact: "Bringt die Bässe zum Wackeln und die Gäste zum Tanzen",
+  },
+  {
+    name: "Wast",
     instrument: "Gitarre",
-    image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=987&auto=format&fit=crop",
-    funFact: "Hat eine Gitarre aus dem Jahr 1962",
+    image: "/images/members/wast4.png?q=80&w=987&auto=format&fit=crop",
+    funFact: "Jede Feier macht er zum unvergesslichen Rock-Spektakel",
+  },
+  {
+    name: "Alex",
+    instrument: "Gesang & Schlagzeug",
+    image: "/images/members/alex1.png?q=80&w=987&auto=format&fit=crop",
+    funFact: "Kalibriert in seiner Freizeit Metronome",
+  },
+  {
+    name: "Leny",
+    instrument: "Gitarre",
+    image: "/images/members/leny1.png?q=80&w=987&auto=format&fit=crop",
+    funFact: "Singt unter der Dusche nur 80er Hits",
   },
 ];
 
