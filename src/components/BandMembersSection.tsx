@@ -12,13 +12,13 @@ const bandMembers: BandMember[] = [
   {
     name: "Nadine",
     instrument: "Gesang",
-    image: "public/nadine3.png?q=80&w=987&auto=format&fit=crop",
+    image: "images/members/nadine3.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Ob rockig oder emotional, sie erreicht mit Ihrer  Wahnsinns-Stimme jedes Ohr",
   },
   {
     name: "Bene",
     instrument: "Keyboard",
-    image: "public/bene3.png?q=80&w=988&auto=format&fit=crop",
+    image: "images/members/bene3.png?q=80&w=988&auto=format&fit=crop",
     funFact: "Der Mann für jeden Sound – und jeden Spaß",
   },
   {
@@ -30,19 +30,19 @@ const bandMembers: BandMember[] = [
   {
     name: "Wast",
     instrument: "Gitarre",
-    image: "public/wast4.png?q=80&w=987&auto=format&fit=crop",
+    image: "images/members/wast4.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Jede Feier macht er zum unvergesslichen Rock-Spektakel",
   },
   {
     name: "Alex",
     instrument: "Gesang & Schlagzeug",
-    image: "public/alex1.png?q=80&w=987&auto=format&fit=crop",
+    image: "images/members/alex1.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Kalibriert in seiner Freizeit Metronome",
   },
   {
     name: "Leny",
     instrument: "Gitarre",
-    image: "public/leny1.png?q=80&w=987&auto=format&fit=crop",
+    image: "images/members/leny1.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Singt unter der Dusche nur 80er Hits",
   },
 ];
