@@ -63,8 +63,12 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for On Top band
-				brand: {
+				// Neue Farbpalette für die On Top Band
+				'3A506B': '#3A506B', // Primär (Dunkles Blau-Grau)
+				'D1D1D1': '#D1D1D1', // Sekundär (Helles Grau/Silber)
+				'C8102E': '#C8102E', // Akzent (Logo-Rot)
+				'neutral-warm': '#E0D6C4', // Neutral Warm (Sand/Beige)
+				'brand': {
 					purple: '#9b87f5',
 					'purple-dark': '#7E69AB',
 					'purple-darker': '#1A1F2C',

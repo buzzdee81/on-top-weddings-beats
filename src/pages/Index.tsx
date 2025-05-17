@@ -7,6 +7,7 @@ import AboutSection from "@/components/AboutSection";
 import BandMembersSection from "@/components/BandMembersSection";
 import RepertoireSection from "@/components/RepertoireSection";
 import MediaSection from "@/components/MediaSection";
+import InstagramFeed from "@/components/InstagramFeed";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
@@ -38,6 +39,7 @@ const Index = () => {
       <BandMembersSection />
       <RepertoireSection />
       <MediaSection />
+      <InstagramFeed />
       <ContactSection />
       
       <Footer />
