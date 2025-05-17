@@ -12,37 +12,37 @@ const bandMembers: BandMember[] = [
   {
     name: "Nadine",
     instrument: "Gesang",
-    image: "/images/members/nadine3.png?q=80&w=987&auto=format&fit=crop",
+    image: "/public/images/members/nadine3.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Ob rockig oder emotional, sie erreicht mit Ihrer  Wahnsinns-Stimme jedes Ohr",
   },
   {
     name: "Bene",
     instrument: "Keyboard",
-    image: "/images/members/bene3.png?q=80&w=988&auto=format&fit=crop",
+    image: "/public/images/members/bene3.png?q=80&w=988&auto=format&fit=crop",
     funFact: "Der Mann für jeden Sound – und jeden Spaß",
   },
   {
     name: "Chris",
     instrument: "Bass",
-    image: "/images/members/chris4.png?q=80&w=987&auto=format&fit=crop",
+    image: "/public/images/members/chris4.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Bringt die Bässe zum Wackeln und die Gäste zum Tanzen",
   },
   {
     name: "Wast",
     instrument: "Gitarre",
-    image: "/images/members/wast4.png?q=80&w=987&auto=format&fit=crop",
+    image: "/public/images/members/wast4.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Jede Feier macht er zum unvergesslichen Rock-Spektakel",
   },
   {
     name: "Alex",
     instrument: "Gesang & Schlagzeug",
-    image: "/images/members/alex1.png?q=80&w=987&auto=format&fit=crop",
+    image: "/public/images/members/alex1.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Kalibriert in seiner Freizeit Metronome",
   },
   {
     name: "Leny",
     instrument: "Gitarre",
-    image: "/images/members/leny1.png?q=80&w=987&auto=format&fit=crop",
+    image: "/public/images/members/leny1.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Singt unter der Dusche nur 80er Hits",
   },
 ];
