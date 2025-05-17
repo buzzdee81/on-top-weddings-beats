@@ -12,7 +12,7 @@ const bandMembers: BandMember[] = [
   {
     name: "Nadine",
     instrument: "Gesang",
-    image: "images/members/nadine3.png?q=80&w=987&auto=format&fit=crop",
+    image: "nadine3.png?q=80&w=987&auto=format&fit=crop",
     funFact: "Ob rockig oder emotional, sie erreicht mit Ihrer  Wahnsinns-Stimme jedes Ohr",
   },
   {
