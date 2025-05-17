@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Calendar, Mail, Phone, Loader2 } from "lucide-react";
-import { supabaseClient } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/client";
 
 interface ContactFormData {
   name: string;
@@ -30,7 +30,7 @@ const ContactSection = () => {
     
     try {
       // Rufe die Supabase Edge-Funktion auf
-      const { error } = await supabaseClient.functions.invoke('send-contact-email', {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: data
       });
       
