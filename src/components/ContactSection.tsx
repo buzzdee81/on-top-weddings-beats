@@ -185,11 +185,6 @@ const ContactSection = () => {
                 Wir sind hauptsächlich im Landkreis Pfaffenhofen/Ilm und den umliegenden Regionen in Bayern aktiv. 
                 Für Auftritte in anderen Regionen sprechen Sie uns bitte direkt an.
               </p>
-              <div className="mt-6">
-                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-brand-purple-dark">
-                  <a href="#home">Zurück nach oben</a>
-                </Button>
-              </div>
             </div>
           </div>
         </div>
