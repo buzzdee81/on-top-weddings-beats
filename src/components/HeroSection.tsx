@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="max-w-3xl mx-auto">
           <div className="flex justify-center mb-6">
             <img 
-              src="/images/logo.png" 
+              src="/logo/logo.png" 
               alt="On Top Band Logo" 
               className="h-32 sm:h-40 md:h-48 animate-fade-in" 
             />
