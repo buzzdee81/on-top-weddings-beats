@@ -24,32 +24,32 @@ const instagramPosts = [
     imageUrl: "/posts/475156123_1978654539282685_2977966864755881624_n.jpg?q=80&w=2070",
     caption: "Großartiger Auftritt bei der Hochzeit! #livemusic #hochzeit",
     likes: 124,
-    date: "2023-07-15",
-    postUrl: `${INSTAGRAM_URL}p/CuWX2X3Ig9B/`
+    date: "2025-02-25",
+    postUrl: `${INSTAGRAM_URL}p/DGfud1bolA6/`
   },
   {
     id: "post2",
     imageUrl: "/posts/475179091_1331544347987987_1883371011612756287_n.jpg?q=80&w=2070",
     caption: "Backstage-Momente vor unserem Auftritt #ontop #band",
     likes: 98,
-    date: "2023-06-28",
-    postUrl: `${INSTAGRAM_URL}p/CuKLm8XIv2S/`
+    date: "2025-01-29",
+    postUrl: `${INSTAGRAM_URL}p/DFbNT8eoN3s/`
   },
   {
     id: "post3",
     imageUrl: "/posts/481805763_1836546520450636_5559497184676111584_n.jpg?q=80&w=2070",
     caption: "Die Stimmung kocht! Danke für diesen unvergesslichen Abend #liveperformance",
     likes: 156,
-    date: "2023-06-10",
-    postUrl: `${INSTAGRAM_URL}p/Ct9BAJBI31Z/`
+    date: "2025-02-25",
+    postUrl: `${INSTAGRAM_URL}p/DGfjTzso0Gl/`
   },
   {
     id: "post4",
     imageUrl: "/posts/475200049_540579132368569_3245614905553706556_n.jpg?q=80&w=1937",
     caption: "Neue Songs im Repertoire! Freut euch auf unsere nächsten Auftritte #newmusic",
     likes: 87,
-    date: "2023-05-22",
-    postUrl: `${INSTAGRAM_URL}p/Cti4hZnIuMb/`
+    date: "2025-01-29",
+    postUrl: `${INSTAGRAM_URL}p/DFZ4xTTI1bu/`
   }
 ];
 
