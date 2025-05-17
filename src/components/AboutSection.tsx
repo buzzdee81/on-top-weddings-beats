@@ -10,7 +10,7 @@ const AboutSection = () => {
           <div className="order-2 lg:order-1">
             <h2 className="mb-6 text-gradient">Über Uns</h2>
             <p className="mb-4">
-              <strong>On Top</strong> ist eine erfahrene 6-köpfige Hochzeits- und Eventband aus dem Landkreis Pfaffenhofen/Ilm, die seit 1998 Stimmung auf jede Feier bringt. 
+              <strong>Test On Top</strong> ist eine erfahrene 6-köpfige Hochzeits- und Eventband aus dem Landkreis Pfaffenhofen/Ilm, die seit 1998 Stimmung auf jede Feier bringt. 
             </p>
             <p className="mb-4">
               Wir spielen die besten Songs aus den 70ern, 80ern, 90ern und aktuelle Hits – passend für jedes Alter und jeden Musikgeschmack. Ob romantische Balladen für den Hochzeitstanz oder Partymusik für die Brautentführung – wir machen Ihre Hochzeit musikalisch einzigartig.
