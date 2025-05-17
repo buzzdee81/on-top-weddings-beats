@@ -103,7 +103,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				serif: ['Playfair Display', 'serif']
+				serif: ['Inter', 'sans-serif'] // Changed from Playfair Display to Inter
 			}
 		}
 	},
