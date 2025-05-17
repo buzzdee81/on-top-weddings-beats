@@ -92,7 +92,7 @@ const InstagramFeed: React.FC = () => {
           </p>
         </div>
 
-        {isLoading ? (
+        /*{isLoading ? (
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-C8102E"></div>
           </div>
@@ -142,7 +142,7 @@ const InstagramFeed: React.FC = () => {
               </Carousel>
             </CardContent>
           </Card>
-        )}
+        )}*/
 
         <div className="text-center">
           <Button className="bg-C8102E hover:bg-C8102E/90 text-white">
