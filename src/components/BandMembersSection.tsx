@@ -24,7 +24,7 @@ const bandMembers: BandMember[] = [
   {
     name: "Chris",
     instrument: "Bass",
-    image: "/images/members/chris4.png?q=80&w=987&auto=format&fit=crop",
+    image: "/images/members/chris4.jpg?q=80&w=987&auto=format&fit=crop",
     funFact: "Bringt die Bässe zum Wackeln und die Gäste zum Tanzen",
   },
   {
