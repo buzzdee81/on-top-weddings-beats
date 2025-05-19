@@ -49,7 +49,7 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square relative">
               <img
-                src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070"
+                src="/images/about.jpg?q=80&w=2070"
                 alt="On Top Band bei einem Auftritt"
                 className="rounded-lg object-cover w-full h-full"
               />
