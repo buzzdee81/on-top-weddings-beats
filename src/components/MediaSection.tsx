@@ -6,27 +6,27 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const images = [
   {
-    src: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070",
+    src: "/images/gallery/1.jpg?q=80&w=2070",
     alt: "Band während eines Auftritts auf einer Hochzeit"
   },
   {
-    src: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070",
+    src: "/images/gallery/2.jpg?q=80&w=2070",
     alt: "Nahaufnahme der Band während eines Live-Auftritts"
   },
   {
-    src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070",
+    src: "/images/gallery/3.jpg?q=80&w=2070",
     alt: "Stimmungsvolle Beleuchtung während eines Konzerts"
   },
   {
-    src: "https://images.unsplash.com/photo-1574226516831-e1dff420e562?q=80&w=1937",
+    src: "/images/gallery/4.jpg?q=80&w=2070",
     alt: "Publikum genießt die Musik bei einer Veranstaltung"
   },
   {
-    src: "https://images.unsplash.com/photo-1528489290689-8402e4a4cc15?q=80&w=2070",
+    src: "/images/gallery/5.jpg?q=80&w=2070",
     alt: "Nahaufnahme eines Gitarristen während eines Solos"
   },
   {
-    src: "https://images.unsplash.com/photo-1541689592655-f5f52825a3b8?q=80&w=2070",
+    src: "/images/gallery/6.jpg?q=80&w=2070",
     alt: "Aufnahme eines romantischen Hochzeitstanzes"
   }
 ];
