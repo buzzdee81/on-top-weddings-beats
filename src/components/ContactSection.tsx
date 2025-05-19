@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useToast } from "@/hooks/use-toast";
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Calendar, Mail, Phone, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import emailjs from '@emailjs/browser';
 
 interface ContactFormData {
   name: string;
@@ -29,24 +28,38 @@ const ContactSection = () => {
     console.log("Form data:", data);
     
     try {
-      // Rufe die Supabase Edge-Funktion auf
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: data
-      });
-      
-      if (error) {
-        throw new Error(error.message || "Beim Senden der Anfrage ist ein Fehler aufgetreten");
-      }
+      // EmailJS Service konfigurieren
+      const templateParams = {
+        to_email: 'info@ontop-band.de',
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone || 'Nicht angegeben',
+        date: data.date || 'Nicht angegeben',
+        event_location: data.eventLocation || 'Nicht angegeben',
+        message: data.message
+      };
 
-      // Erfolgsmeldung anzeigen
-      toast({
-        title: "Anfrage erfolgreich gesendet!",
-        description: "Wir werden uns so schnell wie möglich bei Ihnen melden.",
-        duration: 5000,
-      });
-      
-      // Formular zurücksetzen
-      reset();
+      // Email senden mit EmailJS
+      const response = await emailjs.send(
+        'ontop_email_service', // Ersetzen Sie dies mit Ihrer Service ID
+        'template_s2rolhm', // Ersetzen Sie dies mit Ihrer Template ID
+        templateParams,
+        'ia51BXsK_nNHcw6kf' // Ersetzen Sie dies mit Ihrem Public Key
+      );
+
+      if (response.status === 200) {
+        // Erfolgsmeldung anzeigen
+        toast({
+          title: "Anfrage erfolgreich gesendet!",
+          description: "Wir werden uns so schnell wie möglich bei Ihnen melden.",
+          duration: 5000,
+        });
+        
+        // Formular zurücksetzen
+        reset();
+      } else {
+        throw new Error("Beim Senden der Anfrage ist ein Fehler aufgetreten");
+      }
     } catch (error) {
       console.error("Fehler beim Senden:", error);
       

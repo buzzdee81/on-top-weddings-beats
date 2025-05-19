@@ -1,4 +1,3 @@
-
 import { serve } from "https://deno.land/std@0.177.0/http/server.ts";
 
 interface ContactFormData {
@@ -55,7 +54,7 @@ serve(async (req) => {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     
     if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY nicht gefunden");
+      throw new Error("RESEND_API_KEY nicht konfiguriert. Bitte kontaktieren Sie den Administrator.");
     }
 
     const res = await fetch("https://api.resend.com/emails", {
@@ -65,7 +64,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Kontaktformular <noreply@ontop-band.de>",
+        from: "On Top Band <noreply@ontop-band.de>",
         to: ["info@ontop-band.de"],
         subject: subject,
         text: body,
@@ -76,11 +75,15 @@ serve(async (req) => {
     const data = await res.json();
 
     if (!res.ok) {
+      console.error("Resend API Fehler:", data);
       throw new Error(data.message || "Beim Senden der E-Mail ist ein Fehler aufgetreten");
     }
 
     return new Response(
-      JSON.stringify({ success: true }),
+      JSON.stringify({ 
+        success: true,
+        message: "Ihre Anfrage wurde erfolgreich gesendet. Wir werden uns zeitnah bei Ihnen melden."
+      }),
       {
         status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
