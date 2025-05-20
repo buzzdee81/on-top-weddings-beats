@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Instagram, Phone, Mail, Music } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -87,8 +88,8 @@ const Footer = () => {
           </div>
           <p>© {currentYear} On Top Band. Alle Rechte vorbehalten.</p>
           <div className="mt-2 flex justify-center space-x-4">
-            <a href="#" className="hover:text-brand-pink transition-colors">Impressum</a>
-            <a href="#" className="hover:text-brand-pink transition-colors">Datenschutz</a>
+            <Link to="/impressum" className="hover:text-brand-pink transition-colors">Impressum</Link>
+            <Link to="/datenschutz" className="hover:text-brand-pink transition-colors">Datenschutz</Link>
           </div>
         </div>
       </div>
