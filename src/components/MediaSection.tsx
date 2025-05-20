@@ -139,7 +139,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h2 className="font-medium text-xl">{video.title}</h2>
+                      <p>{video.title}</p>
                     </div>
                   </div>
                 ) : (
@@ -164,7 +164,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h2 className="font-medium text-xl">{video.title}</h2>
+                      <p>{video.title}</p>
                     </div>
                   </div>
                 )
