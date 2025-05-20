@@ -41,11 +41,6 @@ const videos = [
     id: "VIxA6A872HY",
     title: "Best of On Top - Highlights",
     thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/maxresdefault.jpg",
-  },
-  {
-    id: "videoId3", // Placeholder for third video if needed
-    title: "On Top - Partymedley",
-    thumbnail: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070",
   }
 ];
 
