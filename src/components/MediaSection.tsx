@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -41,6 +40,11 @@ const videos = [
     id: "VIxA6A872HY",
     title: "Best of On Top - Highlights",
     thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/maxresdefault.jpg",
+  },
+  {
+    id: "HEHQLhQy3C0",
+    title: "On Top Band - Sommer 2024 Show",
+    thumbnail: "https://img.youtube.com/vi/HEHQLhQy3C0/maxresdefault.jpg",
   }
 ];
 
@@ -139,7 +143,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p>{video.title}</p>
+                      <h2 className="text-xl font-semibold">{video.title}</h2>
                     </div>
                   </div>
                 ) : (
@@ -164,7 +168,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p>{video.title}</p>
+                      <h2 className="text-xl font-semibold">{video.title}</h2>
                     </div>
                   </div>
                 )
