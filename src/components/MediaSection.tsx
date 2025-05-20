@@ -118,11 +118,12 @@ const MediaSection = () => {
           </TabsContent>
 
           <TabsContent value="videos" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Updated to center videos and make them more prominent */}
+            <div className="flex flex-col items-center max-w-4xl mx-auto">
               {videos.map((video, index) => (
                 video.id.startsWith("video") ? (
                   // Placeholder for videos without YouTube IDs
-                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover">
+                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-8 w-full max-w-2xl">
                     <div className="relative">
                       <AspectRatio ratio={16 / 9} className="bg-muted">
                         <img
@@ -138,14 +139,14 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h3 className="font-medium">{video.title}</h3>
+                      <h2 className="font-medium text-xl">{video.title}</h2>
                     </div>
                   </div>
                 ) : (
                   // YouTube videos with embedded player on click
                   <div 
                     key={index} 
-                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer"
+                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-8 w-full max-w-2xl"
                     onClick={() => openVideoPlayer(video.id)}
                   >
                     <div className="relative">
@@ -163,7 +164,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h3 className="font-medium">{video.title}</h3>
+                      <h2 className="font-medium text-xl">{video.title}</h2>
                     </div>
                   </div>
                 )
