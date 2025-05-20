@@ -33,19 +33,14 @@ const images = [
 
 const videos = [
   {
-    id: "videoId1",
+    id: "gLJFVmMERRA",
     title: "On Top - Live auf einer Hochzeit 2023",
-    thumbnail: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=2070",
+    thumbnail: "https://img.youtube.com/vi/gLJFVmMERRA/maxresdefault.jpg",
   },
   {
-    id: "videoId2",
-    title: "Best of On Top - Highlights 2022",
-    thumbnail: "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?q=80&w=2070",
-  },
-  {
-    id: "videoId3",
-    title: "On Top - Partymedley",
-    thumbnail: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=2070",
+    id: "VIxA6A872HY",
+    title: "Best of On Top - Highlights",
+    thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/maxresdefault.jpg",
   }
 ];
 
@@ -70,11 +65,18 @@ const audio = [
 
 const MediaSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const openLightbox = (imageSrc: string) => {
     setSelectedImage(imageSrc);
-    setIsOpen(true);
+    setIsImageOpen(true);
+  };
+
+  const openVideoPlayer = (videoId: string) => {
+    setSelectedVideo(videoId);
+    setIsVideoOpen(true);
   };
 
   return (
@@ -116,27 +118,56 @@ const MediaSection = () => {
           </TabsContent>
 
           <TabsContent value="videos" className="mt-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Updated to center videos and make them more prominent */}
+            <div className="flex flex-col items-center max-w-4xl mx-auto">
               {videos.map((video, index) => (
-                <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover">
-                  <div className="relative">
-                    <AspectRatio ratio={16 / 9} className="bg-muted">
-                      <img
-                        src={video.thumbnail}
-                        alt={video.title}
-                        className="object-cover w-full h-full"
-                      />
-                    </AspectRatio>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
-                        <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
+                video.id.startsWith("video") ? (
+                  // Placeholder for videos without YouTube IDs
+                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-8 w-full max-w-2xl">
+                    <div className="relative">
+                      <AspectRatio ratio={16 / 9} className="bg-muted">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="object-cover w-full h-full"
+                        />
+                      </AspectRatio>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
+                        </div>
                       </div>
                     </div>
+                    <div className="p-4">
+                      <p>{video.title}</p>
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-medium">{video.title}</h3>
+                ) : (
+                  // YouTube videos with embedded player on click
+                  <div 
+                    key={index} 
+                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-8 w-full max-w-2xl"
+                    onClick={() => openVideoPlayer(video.id)}
+                  >
+                    <div className="relative">
+                      <AspectRatio ratio={16 / 9} className="bg-muted">
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="object-cover w-full h-full"
+                        />
+                      </AspectRatio>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4">
+                      <p>{video.title}</p>
+                    </div>
                   </div>
-                </div>
+                )
               ))}
             </div>
           </TabsContent>
@@ -170,14 +201,32 @@ const MediaSection = () => {
         </Tabs>
 
         {/* Image Lightbox */}
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className="max-w-5xl p-0 bg-transparent border-0" onClick={() => setIsOpen(false)}>
+        <Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
+          <DialogContent className="max-w-5xl p-0 bg-transparent border-0" onClick={() => setIsImageOpen(false)}>
             <div className="w-full relative">
               <img
                 src={selectedImage || ''}
                 alt="Vergrößerte Ansicht"
                 className="w-full h-auto"
               />
+            </div>
+          </DialogContent>
+        </Dialog>
+
+        {/* Video Lightbox with YouTube Embed */}
+        <Dialog open={isVideoOpen} onOpenChange={setIsVideoOpen}>
+          <DialogContent className="max-w-5xl p-0 bg-black border-0">
+            <div className="w-full relative">
+              <AspectRatio ratio={16 / 9}>
+                <iframe
+                  src={selectedVideo ? `https://www.youtube.com/embed/${selectedVideo}?autoplay=1` : ''}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </AspectRatio>
             </div>
           </DialogContent>
         </Dialog>
