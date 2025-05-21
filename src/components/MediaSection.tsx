@@ -6,45 +6,45 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 const images = [
   {
     src: "/images/gallery/1.jpg?q=80&w=2070",
-    alt: "Band während eines Auftritts auf einer Hochzeit"
+    alt: "Band beim Empfang auf einer Hochzeit"
   },
   {
     src: "/images/gallery/2.jpg?q=80&w=2070",
-    alt: "Nahaufnahme der Band während eines Live-Auftritts"
+    alt: "Nadine beim Live-Auftritt"
   },
   {
     src: "/images/gallery/3.jpg?q=80&w=2070",
-    alt: "Stimmungsvolle Beleuchtung während eines Konzerts"
+    alt: "Wast beim Live-Auftritt"
   },
   {
     src: "/images/gallery/4.jpg?q=80&w=2070",
-    alt: "Publikum genießt die Musik bei einer Veranstaltung"
+    alt: "Alex beim Live-Auftritt"
   },
   {
     src: "/images/gallery/5.jpg?q=80&w=2070",
-    alt: "Nahaufnahme eines Gitarristen während eines Solos"
+    alt: "On Top mit den King"
   },
   {
     src: "/images/gallery/6.jpg?q=80&w=2070",
-    alt: "Aufnahme eines romantischen Hochzeitstanzes"
+    alt: "Band beim Live-Auftritt"
   }
 ];
 
 const videos = [
   {
     id: "gLJFVmMERRA",
-    title: "On Top - Live auf einer Hochzeit 2023",
-    thumbnail: "https://img.youtube.com/vi/gLJFVmMERRA/maxresdefault.jpg",
+    title: "On Top - So Excited",
+    thumbnail: "https://img.youtube.com/vi/gLJFVmMERRA/default.jpg",
   },
   {
     id: "VIxA6A872HY",
-    title: "Best of On Top - Highlights",
-    thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/maxresdefault.jpg",
+    title: "On Top - It's so easy",
+    thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/default.jpg",
   },
   {
     id: "HEHQLhQy3C0",
-    title: "On Top Band - Sommer 2024 Show",
-    thumbnail: "https://img.youtube.com/vi/HEHQLhQy3C0/maxresdefault.jpg",
+    title: "On Top Band - Live Mitschnitt",
+    thumbnail: "https://img.youtube.com/vi/HEHQLhQy3C0/default.jpg",
   }
 ];
 
