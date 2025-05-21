@@ -33,6 +33,11 @@ const images = [
 
 const videos = [
   {
+    id: "HEHQLhQy3C0",
+    title: "On Top Band - Live Mitschnitt",
+    thumbnail: "https://img.youtube.com/vi/HEHQLhQy3C0/hqdefault.jpg",
+  },
+  {
     id: "gLJFVmMERRA",
     title: "On Top - So Excited",
     thumbnail: "https://img.youtube.com/vi/gLJFVmMERRA/hqdefault.jpg",
@@ -41,11 +46,6 @@ const videos = [
     id: "VIxA6A872HY",
     title: "On Top - It's so easy",
     thumbnail: "https://img.youtube.com/vi/VIxA6A872HY/hqdefault.jpg",
-  },
-  {
-    id: "HEHQLhQy3C0",
-    title: "On Top Band - Live Mitschnitt",
-    thumbnail: "https://img.youtube.com/vi/HEHQLhQy3C0/hqdefault.jpg",
   }
 ];
 
