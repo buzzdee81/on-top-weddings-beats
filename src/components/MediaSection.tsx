@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -48,25 +49,6 @@ const videos = [
   }
 ];
 
-const audio = [
-  {
-    title: "Perfect (Ed Sheeran Cover)",
-    duration: "4:23"
-  },
-  {
-    title: "Don't Stop Believin' (Journey Cover)",
-    duration: "3:50"
-  },
-  {
-    title: "Summer of '69 (Bryan Adams Cover)",
-    duration: "3:35"
-  },
-  {
-    title: "Sweet Caroline (Neil Diamond Cover)",
-    duration: "3:20"
-  }
-];
-
 const MediaSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
@@ -89,16 +71,15 @@ const MediaSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="mb-4 text-gradient">Impressionen</h2>
           <p className="text-lg">
-            Erleben Sie die Energie und Stimmung unserer Live-Auftritte durch Fotos, Videos und Hörbeispiele.
+            Erleben Sie die Energie und Stimmung unserer Live-Auftritte durch Fotos und Videos.
             Überzeugen Sie sich selbst von unserer Erfahrung und unserem professionellen Auftreten.
           </p>
         </div>
 
         <Tabs defaultValue="fotos">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-8">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
             <TabsTrigger value="fotos">Fotos</TabsTrigger>
             <TabsTrigger value="videos">Videos</TabsTrigger>
-            <TabsTrigger value="audio">Hörbeispiele</TabsTrigger>
           </TabsList>
 
           <TabsContent value="fotos" className="mt-6">
@@ -122,12 +103,11 @@ const MediaSection = () => {
           </TabsContent>
 
           <TabsContent value="videos" className="mt-6">
-            {/* Updated to center videos and make them more prominent */}
-            <div className="flex flex-col items-center max-w-4xl mx-auto">
+            <div className="flex flex-col items-center max-w-3xl mx-auto">
               {videos.map((video, index) => (
                 video.id.startsWith("video") ? (
                   // Placeholder for videos without YouTube IDs
-                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-8 w-full max-w-2xl">
+                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-8 w-full max-w-md">
                     <div className="relative">
                       <AspectRatio ratio={16 / 9} className="bg-muted">
                         <img
@@ -143,14 +123,14 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p>{video.title}</p>
+                      <h2 className="text-lg font-medium">{video.title}</h2>
                     </div>
                   </div>
                 ) : (
                   // YouTube videos with embedded player on click
                   <div 
                     key={index} 
-                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-8 w-full max-w-2xl"
+                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-8 w-full max-w-md"
                     onClick={() => openVideoPlayer(video.id)}
                   >
                     <div className="relative">
@@ -168,38 +148,11 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <p>{video.title}</p>
+                      <h2 className="text-lg font-medium">{video.title}</h2>
                     </div>
                   </div>
                 )
               ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="audio" className="mt-6">
-            <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="p-6">
-                <h3 className="text-lg font-semibold mb-4 text-center">Hörproben</h3>
-                <div className="space-y-4">
-                  {audio.map((track, index) => (
-                    <div 
-                      key={index}
-                      className="flex items-center justify-between p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
-                    >
-                      <div className="flex items-center">
-                        <div className="w-8 h-8 rounded-full bg-brand-purple flex items-center justify-center mr-3">
-                          <div className="w-0 h-0 border-t-4 border-t-transparent border-l-8 border-l-white border-b-4 border-b-transparent ml-0.5"></div>
-                        </div>
-                        <span className="font-medium">{track.title}</span>
-                      </div>
-                      <span className="text-gray-500 text-sm">{track.duration}</span>
-                    </div>
-                  ))}
-                </div>
-                <p className="text-center mt-6 text-gray-600 text-sm">
-                  Dies sind nur einige Ausschnitte unserer Live-Auftritte. Kontaktieren Sie uns für mehr Hörbeispiele!
-                </p>
-              </div>
             </div>
           </TabsContent>
         </Tabs>
