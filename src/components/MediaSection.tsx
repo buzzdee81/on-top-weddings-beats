@@ -168,7 +168,7 @@ const MediaSection = () => {
                       </div>
                     </div>
                     <div className="p-4">
-                      <h2 className="text-xl font-semibold">{video.title}</h2>
+                      <p>{video.title}</p>
                     </div>
                   </div>
                 )
