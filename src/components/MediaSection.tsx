@@ -103,11 +103,11 @@ const MediaSection = () => {
           </TabsContent>
 
           <TabsContent value="videos" className="mt-6">
-            <div className="flex flex-col items-center max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {videos.map((video, index) => (
                 video.id.startsWith("video") ? (
                   // Placeholder for videos without YouTube IDs
-                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-8 w-full max-w-md">
+                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-4 w-full">
                     <div className="relative">
                       <AspectRatio ratio={16 / 9} className="bg-muted">
                         <img
@@ -130,7 +130,7 @@ const MediaSection = () => {
                   // YouTube videos with embedded player on click
                   <div 
                     key={index} 
-                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-8 w-full max-w-md"
+                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-4 w-full"
                     onClick={() => openVideoPlayer(video.id)}
                   >
                     <div className="relative">
