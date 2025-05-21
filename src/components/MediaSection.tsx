@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -76,86 +75,83 @@ const MediaSection = () => {
           </p>
         </div>
 
-        <Tabs defaultValue="fotos">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-            <TabsTrigger value="fotos">Fotos</TabsTrigger>
-            <TabsTrigger value="videos">Videos</TabsTrigger>
-          </TabsList>
+        {/* Photos Section */}
+        <div className="mb-12">
+          <h3 className="text-xl font-bold mb-6 text-center">Fotos</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {images.map((image, index) => (
+              <div 
+                key={index}
+                className="overflow-hidden rounded-lg shadow-md cursor-pointer animate-hover"
+                onClick={() => openLightbox(image.src)}
+              >
+                <AspectRatio ratio={4 / 3} className="bg-muted">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="object-cover w-full h-full"
+                  />
+                </AspectRatio>
+              </div>
+            ))}
+          </div>
+        </div>
 
-          <TabsContent value="fotos" className="mt-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {images.map((image, index) => (
-                <div 
-                  key={index}
-                  className="overflow-hidden rounded-lg shadow-md cursor-pointer animate-hover"
-                  onClick={() => openLightbox(image.src)}
-                >
-                  <AspectRatio ratio={4 / 3} className="bg-muted">
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="object-cover w-full h-full"
-                    />
-                  </AspectRatio>
+        {/* Videos Section */}
+        <div>
+          <h3 className="text-xl font-bold mb-6 text-center">Videos</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {videos.map((video, index) => (
+              video.id.startsWith("video") ? (
+                // Placeholder for videos without YouTube IDs
+                <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-4 w-full">
+                  <div className="relative">
+                    <AspectRatio ratio={16 / 9} className="bg-muted">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                        <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h2 className="text-lg font-medium">{video.title}</h2>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="videos" className="mt-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {videos.map((video, index) => (
-                video.id.startsWith("video") ? (
-                  // Placeholder for videos without YouTube IDs
-                  <div key={index} className="overflow-hidden rounded-lg shadow-md animate-hover mb-4 w-full">
-                    <div className="relative">
-                      <AspectRatio ratio={16 / 9} className="bg-muted">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="object-cover w-full h-full"
-                        />
-                      </AspectRatio>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
-                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
-                        </div>
+              ) : (
+                // YouTube videos with embedded player on click
+                <div 
+                  key={index} 
+                  className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-4 w-full"
+                  onClick={() => openVideoPlayer(video.id)}
+                >
+                  <div className="relative">
+                    <AspectRatio ratio={16 / 9} className="bg-muted">
+                      <img
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
+                        <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
                       </div>
                     </div>
-                    <div className="p-4">
-                      <h2 className="text-lg font-medium">{video.title}</h2>
-                    </div>
                   </div>
-                ) : (
-                  // YouTube videos with embedded player on click
-                  <div 
-                    key={index} 
-                    className="overflow-hidden rounded-lg shadow-md animate-hover cursor-pointer mb-4 w-full"
-                    onClick={() => openVideoPlayer(video.id)}
-                  >
-                    <div className="relative">
-                      <AspectRatio ratio={16 / 9} className="bg-muted">
-                        <img
-                          src={video.thumbnail}
-                          alt={video.title}
-                          className="object-cover w-full h-full"
-                        />
-                      </AspectRatio>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 rounded-full bg-white bg-opacity-80 flex items-center justify-center">
-                          <div className="w-0 h-0 border-t-8 border-t-transparent border-l-16 border-l-brand-purple border-b-8 border-b-transparent ml-1"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4">
-                      <h2 className="text-lg font-medium">{video.title}</h2>
-                    </div>
+                  <div className="p-4">
+                    <h2 className="text-lg font-medium">{video.title}</h2>
                   </div>
-                )
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
 
         {/* Image Lightbox */}
         <Dialog open={isImageOpen} onOpenChange={setIsImageOpen}>
