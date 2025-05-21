@@ -22,29 +22,20 @@ const Impressum = () => {
         <div className="prose max-w-none">
           <h2 className="text-2xl font-semibold mt-8 mb-4">Angaben gemäß § 5 TMG</h2>
           <p>
-            On Top Band<br />
-            Vorname Nachname<br />
-            Musterstraße 123<br />
+            On Top Band/ Dochrinna Geier<br />
+            Alexander Huber<br />
+            Altenstadt 9<br />
             85276 Pfaffenhofen an der Ilm
           </p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Kontakt</h2>
           <p>
-            Telefon: +49 175 52 63 003<br />
-            E-Mail: info@ontop-band.de
-          </p>
-          
-          <h2 className="text-2xl font-semibold mt-8 mb-4">Umsatzsteuer-ID</h2>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-            DE XXX XXX XXX
+           E-Mail: info@ontop-band.de
           </p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
           <p>
-            Vorname Nachname<br />
-            Musterstraße 123<br />
-            85276 Pfaffenhofen an der Ilm
+            Alexander Huber
           </p>
           
           <h2 className="text-2xl font-semibold mt-8 mb-4">Streitschlichtung</h2>
@@ -93,6 +84,25 @@ const Impressum = () => {
             Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, 
             bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
           </p>
+
+          <h2 className="text-2xl font-semibold mt-8 mb-4">Google Analytics</h2>
+          <p>
+            Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. ("Google"). 
+            Google Analytics verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglicht. 
+            Die durch den Cookie erzeugten Informationen über Ihre Benutzung diese Website (einschließlich Ihrer IP-Adresse) wird an einen Server von Google in den USA übertragen und dort gespeichert. 
+            Google wird diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, 
+            um Reports über die Websiteaktivitäten für die Websitebetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. 
+            Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten.
+          </p>
+          
+          <p>
+            Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in Verbindung bringen. 
+            Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; 
+            wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website voll 
+            umfänglich nutzen können. Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten 
+            durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden.
+          </p>
+          
         </div>
       </div>
       
