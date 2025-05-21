@@ -95,7 +95,7 @@ const Datenschutz = () => {
             Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
           </p>
           <p>
-            Dochrinna Geier GbR<br />
+            On Top/ Dochrinna Geier<br />
             Alexander Huber<br />
             Altenstadt 9<br />
             85276 Pfaffenhofen<br />
