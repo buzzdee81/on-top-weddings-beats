@@ -52,10 +52,14 @@ const BandMembersSection = () => {
     <section id="band-members" className="section-padding">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4 text-gradient">Die Band</h2>
+          <h2 className="mb-4 text-gradient">Die Band - Musiker für Ihre Hochzeit in Bayern</h2>
           <p className="text-lg">
-            Unsere 6-köpfige Band vereint jahrelange Erfahrung und Leidenschaft für Musik. 
+            On Top - Unsere 6-köpfige Hochzeitsband aus Bayern vereint jahrelange Erfahrung und Leidenschaft für Musik. 
             Lernen Sie die Gesichter hinter den Klängen kennen, die Ihren besonderen Tag unvergesslich machen.
+          </p>
+          <p className="mt-3 text-lg">
+            Als professionelle Musiker für Hochzeiten bieten wir die perfekte Tanzmusik für Ihre Feier in München, 
+            Pfaffenhofen, Augsburg, Freising und ganz Bayern.
           </p>
         </div>
 
@@ -68,7 +72,7 @@ const BandMembersSection = () => {
               <div className="aspect-square relative overflow-hidden">
                 <img
                   src={member.image}
-                  alt={`${member.name} - ${member.instrument}`}
+                  alt={`${member.name} - ${member.instrument} - On Top Hochzeitsband Bayern`}
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -81,6 +85,13 @@ const BandMembersSection = () => {
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <p className="text-lg max-w-3xl mx-auto">
+            Seit 1998 spielt On Top auf Hochzeiten, Firmenfeiern und Events in ganz Bayern. 
+            Unsere umfangreiche Erfahrung als Hochzeitsband macht uns zum idealen Partner für Ihre Feier.
+          </p>
         </div>
       </div>
     </section>

@@ -16,20 +16,20 @@ const HeroSection = () => {
           <div className="flex justify-center mb-6">
             <img 
               src="/logo/logo.png" 
-              alt="On Top Band Logo" 
+              alt="On Top Band Logo - Hochzeitsband Bayern" 
               className="h-32 sm:h-40 md:h-48 animate-fade-in" 
             />
           </div>
 
           <h1 className="text-white mb-6 animate-fade-in">
             Ihre perfekte{" "}
-            <span className="text-brand-pink">Hochzeitsband</span> für
+            <span className="text-brand-pink">Hochzeitsband in Bayern</span> für
             <br className="hidden sm:block" /> unvergessliche Momente
           </h1>
 
           <p className="text-white text-lg md:text-xl mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Seit 1998 bringen wir als erfahrene 6-köpfige Band Stimmung auf jede Feier
-            im Landkreis Pfaffenhofen/Ilm und Umgebung
+            <strong>Seit 1998</strong> bringen wir als erfahrene 6-köpfige Band Stimmung auf jede Hochzeit und Event 
+            im Landkreis Pfaffenhofen/Ilm, München, Augsburg, Freising und ganz Bayern
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in" style={{ animationDelay: "0.4s" }}>
