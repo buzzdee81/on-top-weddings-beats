@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -97,7 +96,7 @@ const RepertoireSection = () => {
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <Tabs defaultValue="hochzeitstanz" value={activeTab} onValueChange={setActiveTab}>
             <div className="px-4 sm:px-6 md:px-8 pt-6">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 min-h-[3rem]">
                 {repertoireData.map((category) => (
                   <TabsTrigger
                     key={category.id}
@@ -110,7 +109,7 @@ const RepertoireSection = () => {
               </TabsList>
             </div>
 
-            <div className="p-4 sm:p-6 md:p-8 pt-6">
+            <div className="px-4 sm:px-6 md:px-8 pt-12 pb-8">
               {repertoireData.map((category) => (
                 <TabsContent key={category.id} value={category.id}>
                   <div>
