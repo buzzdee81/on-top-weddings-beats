@@ -36,6 +36,11 @@ npm i
 npm run dev
 ```
 
+# Deploy to Website
+npm run build
+
+# copy dist directory to webserver
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
