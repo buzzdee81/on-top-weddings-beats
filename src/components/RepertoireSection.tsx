@@ -95,21 +95,25 @@ const RepertoireSection = () => {
 
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           <Tabs defaultValue="hochzeitstanz" value={activeTab} onValueChange={setActiveTab}>
-            <div className="px-4 sm:px-6 md:px-8 pt-6">
-              <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 min-h-[3rem]">
-                {repertoireData.map((category) => (
-                  <TabsTrigger
-                    key={category.id}
-                    value={category.id}
-                    className="border border-gray-200"
-                  >
-                    {category.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
+            <div className="px-2 sm:px-2 md:px-2 pt-6 pb-0">
+              <div className="bg-gray-100 rounded-xl p-1">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                  <TabsList className="contents">
+                    {repertoireData.map((category) => (
+                      <TabsTrigger
+                        key={category.id}
+                        value={category.id}
+                        className="border border-gray-200 rounded-md px-4 py-2 w-full text-center"
+                      >
+                        {category.name}
+                      </TabsTrigger>
+                    ))}
+                  </TabsList>
+                </div>
+              </div>
             </div>
 
-            <div className="px-4 sm:px-6 md:px-8 pt-12 pb-8">
+            <div className="px-4 sm:px-6 md:px-8 pt-8 pb-8">
               {repertoireData.map((category) => (
                 <TabsContent key={category.id} value={category.id}>
                   <div>
